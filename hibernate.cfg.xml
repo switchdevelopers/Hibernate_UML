@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost/fastsj</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">claveja</property>
+    <!--
+        <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
+        <property name="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</property>
+        <property name="hibernate.connection.url">jdbc:hsqldb:hsql://127.0.0.1</property>
+        <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.connection.password"/>
+    -->
+    <!--
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/fastsj</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">claveja</property>
+        -->
+        <property name="hibernate.connection.pool_size">1</property>
+        <property name="hibernate.id.new_generator_mappings">true</property>
+    <!--        BASE DEL SISTEMA-->
+    <!--property name="hibernate.show_sql">true</property-->
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.show_sql">false</property>
+        <mapping class="com.jswitch.base.modelo.entidades.Empresa"/>
+        <mapping class="com.jswitch.base.modelo.entidades.Licencia"/>
+        <mapping class="com.jswitch.base.modelo.entidades.Usuario"/>
+        <mapping class="com.jswitch.base.modelo.entidades.Encabezado"/>
+        <mapping class="com.jswitch.base.modelo.entidades.Observacion"/>
+        <mapping class="com.jswitch.base.modelo.entidades.NotaTecnica"/>
+        <mapping class="com.jswitch.base.modelo.entidades.TipoDocumento"/>
+        <mapping class="com.jswitch.base.modelo.entidades.Documento"/>
+        <mapping class="com.jswitch.base.modelo.entidades.ValoresEstandares"/>
+        <mapping class="com.jswitch.base.modelo.entidades.CalendarioBancario"/>
+        <mapping class="com.jswitch.base.modelo.entidades.auditoria.AuditLogRecord"/>
+        <mapping class="com.jswitch.base.modelo.entidades.helpcenter.maestra.Mensaje"/>
+        <mapping class="com.jswitch.base.modelo.entidades.defaultData.DefaultPersona"/>
+    <!--        REPORTES-->
+        <mapping class="com.jswitch.reporte.modelo.Reporte"/>
+        <mapping class="com.jswitch.reporte.modelo.ParametroReporte"/>
+    <!--        PERSONAS Y ENTES-->
+        <mapping class="com.jswitch.persona.modelo.dominio.Estado"/>
+        <mapping class="com.jswitch.persona.modelo.dominio.TipoActividadEconomica"/>
+        <mapping class="com.jswitch.persona.modelo.dominio.TipoCapacidadEconomica"/>
+        <mapping class="com.jswitch.persona.modelo.dominio.TipoCuentaBancaria"/>
+        <mapping class="com.jswitch.persona.modelo.dominio.TipoDireccion"/>
+        <mapping class="com.jswitch.persona.modelo.dominio.TipoTelefono2"/>
+        <mapping class="com.jswitch.persona.modelo.dominio.TipoCodigoArea"/>
+        <mapping class="com.jswitch.persona.modelo.dominio.TipoPersona"/>
+        <mapping class="com.jswitch.persona.modelo.maestra.PersonaJuridica"/>
+        <mapping class="com.jswitch.persona.modelo.maestra.PersonaNatural"/>
+        <mapping class="com.jswitch.persona.modelo.maestra.Persona"/>
+        <mapping class="com.jswitch.persona.modelo.maestra.Sucursal"/>
+        <mapping class="com.jswitch.persona.modelo.maestra.Rif"/>
+        <mapping class="com.jswitch.persona.modelo.transac.CuentaBancariaPersona"/>
+        <mapping class="com.jswitch.persona.modelo.transac.DireccionPersona"/>
+        <mapping class="com.jswitch.persona.modelo.transac.TelefonoPersona"/>
+    <!--        ROLES DE LOS USUARIOS-->
+        <mapping class="com.jswitch.rol.modelo.Item"/>
+        <mapping class="com.jswitch.rol.modelo.MenuByRol"/>
+        <mapping class="com.jswitch.rol.modelo.Rol"/>
+    <!--        polizas -->
+        <mapping class="com.jswitch.polizas.modelo.maestra.Poliza"/>
+    <!--        certificados -->
+        <mapping class="com.jswitch.certificados.modelo.maestra.Certificado"/>
+    <!--        asegurados -->
+        <mapping class="com.jswitch.asegurados.modelo.maestra.Asegurado"/>
+        <mapping class="com.jswitch.asegurados.modelo.maestra.Beneficiario"/>
+        <mapping class="com.jswitch.asegurados.modelo.maestra.Titular"/>
+        <mapping class="com.jswitch.asegurados.modelo.dominio.Parentesco"/>
+        <mapping class="com.jswitch.asegurados.modelo.dominio.Departamento"/>
+        <mapping class="com.jswitch.asegurados.modelo.dominio.TipoContrato"/>
+     <!--        pagos     -->
+        <mapping class="com.jswitch.pagos.modelo.dominio.ConceptoSENIAT"/>
+        <mapping class="com.jswitch.pagos.modelo.maestra.OrdenDePago"/>
+        <mapping class="com.jswitch.pagos.modelo.maestra.Remesa"/>
+        <mapping class="com.jswitch.pagos.modelo.maestra.Factura"/>
+        <mapping class="com.jswitch.pagos.modelo.transaccional.DesgloseCobertura"/>
+        <mapping class="com.jswitch.pagos.modelo.transaccional.DesgloseSumaAsegurada"/>
+   <!--        siniestros -->
+        <mapping class="com.jswitch.siniestros.modelo.maestra.Siniestro"/>
+        <mapping class="com.jswitch.siniestros.modelo.maestra.DiagnosticoSiniestro"/>
+        <mapping class="com.jswitch.siniestros.modelo.maestra.DetalleSiniestro"/>
+        <mapping class="com.jswitch.siniestros.modelo.transaccional.Presupuesto"/>
+        <mapping class="com.jswitch.siniestros.modelo.transaccional.MantenimientoDiagnostico"/>
+        <mapping class="com.jswitch.siniestros.modelo.dominio.EtapaSiniestro"/>
+        <mapping class="com.jswitch.siniestros.modelo.dominio.EstatusSiniestro"/>
+        <mapping class="com.jswitch.siniestros.modelo.dominio.TipoSiniestro"/>
+        <mapping class="com.jswitch.siniestros.modelo.maestra.detalle.APS"/>
+        <mapping class="com.jswitch.siniestros.modelo.maestra.detalle.AyudaSocial"/>
+        <mapping class="com.jswitch.siniestros.modelo.maestra.detalle.CartaAval"/>
+        <mapping class="com.jswitch.siniestros.modelo.maestra.detalle.Emergencia"/>
+        <mapping class="com.jswitch.siniestros.modelo.maestra.detalle.Funerario"/>
+        <mapping class="com.jswitch.siniestros.modelo.maestra.detalle.Reembolso"/>
+        <mapping class="com.jswitch.siniestros.modelo.maestra.detalle.Vida"/>
+    <!--        configuracion -->
+        <mapping class="com.jswitch.configuracion.modelo.maestra.Plan"/>
+        <mapping class="com.jswitch.configuracion.modelo.transaccional.SumaAsegurada"/>
+        <mapping class="com.jswitch.configuracion.modelo.transaccional.SumaAmparada"/>
+        <mapping class="com.jswitch.configuracion.modelo.dominio.Ramo"/>
+        <mapping class="com.jswitch.configuracion.modelo.dominio.patologias.Especialidad"/>
+        <mapping class="com.jswitch.configuracion.modelo.dominio.patologias.Diagnostico"/>
+        <mapping class="com.jswitch.configuracion.modelo.dominio.patologias.Tratamiento"/>
+        <mapping class="com.jswitch.configuracion.modelo.maestra.ConfiguracionCobertura"/>
+        <mapping class="com.jswitch.configuracion.modelo.dominio.Cobertura"/>
+        <mapping class="com.jswitch.configuracion.modelo.maestra.ConfiguracionPrima"/>
+        <mapping class="com.jswitch.configuracion.modelo.dominio.PlazoEspera"/>
+    </session-factory>
+</hibernate-configuration>
